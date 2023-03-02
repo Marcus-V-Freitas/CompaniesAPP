@@ -1,0 +1,14 @@
+﻿
+<input type="text" class="form-control" id="@Field" name="@Field" placeholder="@Placeholder" value="@Value" 
+       @oncustompaste="ValidateMask"
+       @oninput="ValidateMask"        
+       @onkeydown="ValidateMask"
+       @onkeydown:preventDefault="_preventDefault"
+       @oncustompaste:preventDefault="_preventDefault" />
+
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <div id="mensagem-erro" name="mensagem-erro" class="invalid-feedback d-block">
+        @ErrorMessage
+    </div>
+}

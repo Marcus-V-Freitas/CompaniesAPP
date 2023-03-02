@@ -1,0 +1,35 @@
+﻿@page "/"
+
+<div class="row">
+    <PopupAlert @ref="_popupAlert" />
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-light">
+                <h1 id="titulo" name="titulo" class="card-title bg-dark text-light">Pesquisa da Empresa por CNPJ:</h1>
+            </div>
+    
+            <div class="card-body">
+                <form id="formulario" name="formulario" class="row g-3 needs-validation" @onsubmit="HandleSubmit">
+                    <div class="col-12">
+                        <label for="cnpj" class="form-label">CNPJ</label>
+                        <CNPJInputMask Field="cnpj" Placeholder="00.000.000/0000-00" Value="@_inputText" ErrorMessage="@_errorMessage" ValueChanged="@CheckIfValueIsValid" />
+                    </div>
+                    
+                    <div class="col-12">
+                        <button id="buscar" name="buscar" type="submit" class="btn btn-dark @(_isValid ? string.Empty : "disabled")">Buscar</button>
+                        <button id="limpar" name="limpar" type="button" class="btn btn-danger" @onclick="@Limpar">Limpar</button>
+                    </div>
+                </form>                                       
+                    @if (_company != null)
+                    {
+                        <div class="table-responsive mt-4 mx-auto">
+                            <EmpresaDetalhes Company="@_company" />
+                        </div>
+                    }
+                    
+                    <Loading IsLoading="@_isLoading"/>                    
+            </div>
+        </div>
+    </div>
+</div>

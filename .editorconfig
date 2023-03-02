@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# CS0628: Novo membro protegido declarado no tipo selado
+dotnet_diagnostic.CS0628.severity = none
+
+# IDE1006: Estilos de Nomenclatura
+dotnet_diagnostic.IDE1006.severity = none
+
+# IDE0008: Usar o tipo explícito
+dotnet_diagnostic.IDE0008.severity = none

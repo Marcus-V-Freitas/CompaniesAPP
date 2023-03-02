@@ -1,0 +1,7 @@
+﻿<div class="alert alert-@Type alert-dismissible fade @(IsVisible ? "show" : "hide")" role="alert" @onclick="Close">
+    <strong>@HeaderText</strong> 
+        @BodyText
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" >
+        <span style="display:none" aria-hidden="true">&times;</span>
+    </button>
+</div>
